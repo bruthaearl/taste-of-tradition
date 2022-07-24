@@ -4,25 +4,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-
-  <title>{{ .Title }} | Taste of Tradition</title>
+  {{ $style := resources.Get "/tot.scss" | toCSS | minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink | relURL }}" />
+  <title>{{ .Title }} | Oak St. Electronics </title>
 </head>
 
 <body>
-    {{block "main" . }} {{ end }}
+  <div class="section is-family-code">
+    <div class="container is-max-desktop">
 
-  <footer class="footer content has-text-centered is-size-7">
-      <p >
-          &copy;	Jake Jones // Oak St. Electronics
-      </p>
-      <p>Text and images licensed under 
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
-      </p>
-      <p>
-        Source code licensed under <a href="https://opensource.org/licenses/MIT">MIT</a>.
-      </p>
-  </footer>
+      {{ partial "nav.html" . }}
+      {{ partial "breadcrumb.html" . }}
+
+      <main class="content">
+        {{block "main" . }} {{ end }}
+      </main>
+    </div>
+  </div>
 
 </body>
 

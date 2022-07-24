@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<div class="card">
+  <div class="card-content">
+    <p class="title">
+      {{ .Title }}
+    </p>
+    <p class="subtitle">
+      <a href="" class="author">{{ .Params.author }}</a>
+    </p>
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
+  <foot class="card-footer">
+    <p class="card-footer-item">
+      <span>{{ .Params.page }}</span>
+    </p>
+  </foot>
+</div>
+{{ end }}

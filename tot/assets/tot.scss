@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+$pictorial-carmine: #b72b4eff;
+//$link: $pictorial-carmine;
+
+
+@import "./bulma/bulma.sass";
+
+.author{
+    position: relative;
+}
+
+.author::before {
+    content: "";
+    background-color: lightgray !important;
+    position: absolute;
+    left: 0.5rem;
+    bottom: 5px;
+    width: 100%;
+    height: 2px;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+.author:hover::before {
+    left: -5px;
+    bottom: 0;
+    height: 100%;
+    width: calc(100% + 10px);
+}

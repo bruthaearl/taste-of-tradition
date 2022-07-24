@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<div class="content">
+    <!-- if this page contains subsections -->
+  {{if .Sections }}
+  <ul>
+    {{ range .Sections.ByTitle }}
+    <li>
+      <a class="" href="{{.RelPermalink }}">{{ .Title }}</a>
+    </li>
+    <ul>
+      {{ range .Pages.ByTitle }}
+      <li>
+        <a href="{{.RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </ul>
+  <!-- if this page does not contain subsections -->
+  {{ else }}
+  <ul>
+    {{ range .Pages.ByTitle}}
+    <li>
+      <a class="" href="{{.RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</div>
+
+{{ end }}

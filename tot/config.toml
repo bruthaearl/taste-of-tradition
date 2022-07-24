@@ -1,3 +1,25 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Taste of Tradition"
+
+[menu]
+  [[menu.main]]
+      name = "Notes"
+      url = "/notes"
+      weight = 20
+  [[menu.main]]
+      name = "Projects"
+      url = "/projects"
+      weight = 10
+  [[menu.main]]
+      name = "Now"
+      url = "/now"
+      weight = 40
+  [[menu.main]]
+      name = "About"
+      url = "/"
+      weight = 30
+  [[menu.main]]
+      name = "Contact"
+      url = "/contact"
+      weight = 31
